@@ -1,0 +1,40 @@
+.btn-big {
+    padding: 20px;
+    margin: 20px;
+    font-size:150%;
+    width: 200px;
+    height: 80px;
+}
+
+.hover {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
+
+header {
+    font-weight:bold;
+}
+
+th {
+    text-align: right;
+}
+
+td {
+    vertical-align: middle !important;
+    padding: 5px !important;
+    text-align: right;
+  }
+
+img {
+    vertical-align: middle !important;
+}
+
+.logo {
+    width: 16px;
+    height: 16px;
+}
+
+.box {
+    padding: 100px;
+}

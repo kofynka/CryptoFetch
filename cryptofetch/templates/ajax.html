@@ -1,0 +1,43 @@
+<table id="crypto_table" class="table">
+    <thead>
+    <tr class="table-active">
+        <th class="text-center" tabindex="0">#</th>
+        <th class="text-left" tabindex="1">Name</th>
+        <th tabindex="2">Market Cap</th>
+        <th tabindex="3">Price</th>
+        <th tabindex="4">Volume (24h)</th>
+        <th tabindex="5">Circulatign Supply</th>
+        <th tabindex="6">Change (24h)</th>
+        <th tabindex="7">Change (7d)</th>
+        <th class="text-center" tabindex="8">Price Graph(7d)</th>
+    </tr>
+    </thead>
+    {% for crypto in cryptos %}
+    <tbody>
+    <tr class="table-active">
+        <td class="text-center">{{ crypto.id }}</td>
+        <td class="text-left">
+        <img class="logo" src="../static/imgs/{{ crypto.crypto_id }}.png"></img>
+        <span>{{ crypto.name }}</span>
+        </td>
+        <td>${{ crypto.market_cap }}</td>
+        <td class="text-info">${{ crypto.price }}</td>
+        <td class="text-info">${{ crypto.volume_24h }}</td>
+        <td>{{ crypto.circulating_supply }} {{ crypto.symbol }}</td>
+        {% if crypto.percent_change_24h >= 0 %}
+        <td class="text-success">{{ crypto.percent_change_24h }}%</td>
+        {% else %}
+        <td class="text-danger">{{ crypto.percent_change_24h }}%</td>
+        {% endif %}
+        {% if crypto.percent_change_7d >= 0 %}
+        <td class="text-success">{{ crypto.percent_change_7d }}%</td>
+        {% else %}
+        <td class="text-danger">{{ crypto.percent_change_7d }}%</td>
+        {% endif %}
+        <td class="text-center">
+        <img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/{{ crypto.crypto_id }}.png"></img>
+        </td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
